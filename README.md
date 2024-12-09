@@ -34,7 +34,7 @@ max heap: 4096
 ```
 
 ## Building the Project
-When running the program for the first time:
+When running the project for the first time:
 ```
 mkdir lib
 ```
