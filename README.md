@@ -18,16 +18,7 @@ Coalescing: Adjacent free blocks are merged to reduce fragmentation.
 
 realloc and calloc: Implementations of realloc and calloc are included for completeness.
 
-Statistics Tracking: The implementation tracks various statistics to analyze the performance of the allocator:
-
-Number of successful malloc calls
-Number of successful free calls
-Number of reused blocks
-Number of new memory blocks requested from the system
-Number of block splits and coalesces
-Total number of blocks in the free list
-Total memory requested
-Maximum heap size
+Statistics Tracking: The implementation tracks various statistics to analyze the performance of the allocator
 
 Example output of statistics upon program exit:
 ```
