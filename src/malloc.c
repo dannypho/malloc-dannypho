@@ -65,9 +65,6 @@ struct _block *heapList = NULL; /* Free list to track the _blocks available */
  *
  * \return a _block that fits the request or NULL if no free _block matches
  *
- * \TODO Implement Next Fit
- * \TODO Implement Best Fit
- * \TODO Implement Worst Fit
  */
 struct _block *findFreeBlock(struct _block **last, size_t size) 
 {
@@ -90,7 +87,6 @@ struct _block *findFreeBlock(struct _block **last, size_t size)
    }
 #endif
 
-// \TODO Put your Best Fit code in this #ifdef block
 #if defined BEST && BEST == 0
 	struct _block *best_block = NULL;
 	size_t smallest_size = SIZE_MAX;
@@ -108,7 +104,6 @@ struct _block *findFreeBlock(struct _block **last, size_t size)
 	curr = best_block;
 #endif
 
-// \TODO Put your Worst Fit code in this #ifdef block
 #if defined WORST && WORST == 0
 	struct _block *worst_block = NULL;
 	size_t largest_size = 0;
@@ -126,7 +121,6 @@ struct _block *findFreeBlock(struct _block **last, size_t size)
 	curr = worst_block;
 #endif
 
-// \TODO Put your Next Fit code in this #ifdef block
 #if defined NEXT && NEXT == 0
    static struct _block *last_allocated = NULL;
 
@@ -257,12 +251,7 @@ void *malloc(size_t size)
       num_reuses++;
    }
 
-   /* TODO: If the block found by findFreeBlock is larger than we need then:
-            If the leftover space in the new block is greater than the sizeof(_block)+4 then
-            split the block.
-            If the leftover space in the new block is less than the sizeof(_block)+4 then
-            don't split the block.
-   */
+ 
    if (next && next->size > size + sizeof(struct _block) + 4)
 	{
 		struct _block *new_block = (struct _block *)((char *)BLOCK_DATA(next) + size);
@@ -325,10 +314,6 @@ void free(void *ptr)
    assert(curr->free == 0);
    curr->free = true;
 
-
-   /* TODO: Coalesce free _blocks.  If the next block or previous block 
-            are free then combine them with this block being freed.
-   */
    if (curr->prev && curr->prev->free) 
    {
       curr->prev->size += sizeof(struct _block) + curr->size;
@@ -395,7 +380,3 @@ void *realloc( void *ptr, size_t size )
    return new_ptr;
 }
 
-
-
-/* vim: IENTRTMzMjAgU3ByaW5nIDIwM001= ----------------------------------------*/
-/* vim: set expandtab sts=3 sw=3 ts=6 ft=cpp: --------------------------------*/

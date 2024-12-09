@@ -13,7 +13,6 @@ TESTS=		tests/test1 \
                 tests/bfwf \
                 tests/ffnf \
                 tests/realloc \
-				tests/benchmark \
                 tests/calloc
 
 %.o: %.c $(DEPS)
