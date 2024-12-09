@@ -34,9 +34,12 @@ max heap: 4096
 ```
 
 ## Building the Project
-To build the project and compile the shared libraries and test programs:
+When running the program for the first time:
 ```
 mkdir lib
+```
+To build the project and compile the shared libraries and test programs:
+```
 make
 ```
 
