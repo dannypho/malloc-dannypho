@@ -54,7 +54,7 @@ env LD_PRELOAD=lib/libmalloc-ff.so tests/ffnf
 ```
 Replace libmalloc-ff.so with the appropriate library for other allocation strategies:
 
-*Best Fit: libmalloc-bf.so
-*Next Fit: libmalloc-nf.so
-*Worst Fit: libmalloc-wf.so
+* Best Fit: libmalloc-bf.so
+* Next Fit: libmalloc-nf.so
+* Worst Fit: libmalloc-wf.so
 
