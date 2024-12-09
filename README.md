@@ -5,10 +5,10 @@ This project implements a custom version of the malloc and free functions for dy
 ## Features
 Memory Allocation Strategies:
 
-First Fit (pre-implemented)
-Best Fit
-Next Fit
-Worst Fit
+1. First Fit
+2. Best Fit
+3. Next Fit
+4. Worst Fit
 Dynamic Memory Management Operations:
 
 Splitting: When a free block is larger than the requested size, the block is split into smaller segments.
