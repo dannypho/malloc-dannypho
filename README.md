@@ -9,11 +9,15 @@ Memory Allocation Strategies:
 2. Best Fit
 3. Next Fit
 4. Worst Fit
+5. 
 Dynamic Memory Management Operations:
 
 Splitting: When a free block is larger than the requested size, the block is split into smaller segments.
+
 Coalescing: Adjacent free blocks are merged to reduce fragmentation.
+
 realloc and calloc: Implementations of realloc and calloc are included for completeness.
+
 Statistics Tracking: The implementation tracks various statistics to analyze the performance of the allocator:
 
 Number of successful malloc calls
